@@ -1,5 +1,5 @@
 # InteligenciaArtificial
-Osuna Russell Ana Isabel
+Osuna Russell Ana Isabel -
 Rodriguez Valerio Jesus Ricardo
 
 arbol.py 
