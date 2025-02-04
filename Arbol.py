@@ -1,4 +1,5 @@
-
+# Osuna Russell Ana Isabel
+# Rodriguez Valerio Jesus Ricardo
 class Arbol:
     def __init__(self, raiz):
         self.raiz = Nodo(raiz)
