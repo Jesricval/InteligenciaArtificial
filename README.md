@@ -1,5 +1,5 @@
 # InteligenciaArtificial
-Osuna Russell Ana Isabel -
+Autores: Osuna Russell Ana Isabel -
 Rodriguez Valerio Jesus Ricardo
 
 [arbol.py](https://github.com/Jesricval/InteligenciaArtificial/blob/main/Unidad%201/Arbol.py) 
@@ -28,4 +28,5 @@ Si el valor es menor que el valor actual, va a la izquierda y si es mayor o igua
 En el método - imprimir_nodos- se imprime primero si hay un hijo izquierdo, aumentando el nivel.
 Luego, imprime su propio valor con su nivel. Por último, si hay un hijo derecho, lo imprime aumentando el nivel.
 
-[Ejecucion](https://github.com/Jesricval/InteligenciaArtificial/blob/main/Unidad%201/Arbol_Binario_Ejecuciones.pdf)
+[Ejecucion de arbol.py](https://github.com/Jesricval/InteligenciaArtificial/blob/main/Unidad%201/Arbol_Binario_Ejecuciones.pdf)
+
