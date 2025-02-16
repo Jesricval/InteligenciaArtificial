@@ -2,6 +2,9 @@
 Autores: Osuna Russell Ana Isabel -
 Rodriguez Valerio Jesus Ricardo
 
+Inteligencia Artificial:
+La IA es una rama de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como el aprendizaje, el razonamiento, la resolución de problemas, la percepción y la toma de decisiones.
+
 [arbol.py](https://github.com/Jesricval/InteligenciaArtificial/blob/main/Unidad%201/Arbol.py) 
 
 En la representación de un arbol binario de búsqueda, como sabemos cada nodo puede tener hasta 2 hijos cada uno.
