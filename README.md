@@ -33,3 +33,9 @@ Luego, imprime su propio valor con su nivel. Por último, si hay un hijo derecho
 
 [Ejecucion de arbol.py](https://github.com/Jesricval/InteligenciaArtificial/blob/main/Unidad%201/Arbol_Binario_Ejecuciones.pdf)
 
+Agentes inteligentes:
+Los agentes basados en objetivos, o agentes basados en reglas, son agentes de IA con capacidades de razonamiento más sólidas. Además de evaluar los datos del entorno, el agente compara diferentes enfoques que lo ayudan a lograr el resultado deseado.
+[Investigacion Agentes](https://github.com/Jesricval/InteligenciaArtificial/blob/main/Unidad%201/Agentes%20Inteligentes%20IA.pdf)
+
+[Agentes Inteligentes Presentacion](https://github.com/Jesricval/InteligenciaArtificial/blob/main/Unidad%201/Agentes%20IA%20presentacio%CC%81n.pdf)
+
