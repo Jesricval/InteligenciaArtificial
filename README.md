@@ -39,3 +39,4 @@ Los agentes basados en objetivos, o agentes basados en reglas, son agentes de IA
 
 [Agentes Inteligentes Presentacion](https://github.com/Jesricval/InteligenciaArtificial/blob/main/Unidad%201/Agentes%20IA%20presentacio%CC%81n.pdf)
 
+[Codigo y ejecucion de solucion del Puzzle 8](https://github.com/Jesricval/InteligenciaArtificial/tree/main/Unidad%201/puzzle)
