@@ -7,4 +7,4 @@ La IA es una rama de la informática que busca crear sistemas capaces de realiza
 
 [TRABAJOS Y TAREAS UNIDAD 1](https://github.com/Jesricval/InteligenciaArtificial/tree/main/Unidad%201)
 
-[TRABAJOS Y TAREAS UNIDAD 2]()
+[TRABAJOS Y TAREAS UNIDAD 2](https://github.com/Jesricval/InteligenciaArtificial/tree/main/Unidad%202)
