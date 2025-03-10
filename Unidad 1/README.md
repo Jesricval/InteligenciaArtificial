@@ -1,6 +1,6 @@
 UNIDAD 1
 
-OSUNA RUSSELL ANA ISABEL
+OSUNA RUSSELL ANA ISABEL - 
 RODRIGUEZ VALERIO JESUS RICARDO
 
 [arbol.py](https://github.com/Jesricval/InteligenciaArtificial/blob/main/Unidad%201/Arbol.py) 
