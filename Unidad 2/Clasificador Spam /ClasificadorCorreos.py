@@ -1,6 +1,27 @@
 import tkinter as tk
 from tkinter import scrolledtext, messagebox, filedialog
 
+import pandas as pd
+import numpy as np
+
+import nltk
+from nltk.corpus import stopwords
+
+# Descomenta la siguiente línea solo la primera vez si necesitas descargar los datos
+# nltk.download('stopwords', quiet=True)
+nltk.data.find('corpora/stopwords')
+stop_words_es = set(stopwords.words('spanish'))
+stop_words_en = set(stopwords.words('english'))
+
+stop_words = stop_words_es.union(stop_words_en)
+
+# --- 1. Preprocesamiento 
+def limpiar_texto(texto, stop_words_set):
+    if not isinstance(texto, str): texto = str(texto)
+    texto = texto.lower()
+    texto = ''.join([c if c.isalnum() or c.isspace() else ' ' for c in texto])
+    cleaned_text = ' '.join(word for word in texto.split() if word not in stop_words_set and len(word) > 2)
+    return cleaned_text
 
 class SpamClassifierApp:
     def __init__(self, root):
