@@ -24,7 +24,7 @@ def limpiar_texto(texto, stop_words_set):
     return cleaned_text
 
 # --- 2. Carga, Entrenamiento y Evaluación 
-# la creación del modelo Naïve Bayes y la evaluación del rendimiento.
+# la creación del modelo de Bayes y la evaluación del rendimiento.
 from sklearn.model_selection import train_test_split 
 from sklearn.feature_extraction.text import CountVectorizer  # Conteo de palabras
 from sklearn.naive_bayes import MultinomialNB  # Este se utiliza para la clasificación de Bayes
