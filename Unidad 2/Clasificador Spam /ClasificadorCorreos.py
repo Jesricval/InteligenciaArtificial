@@ -24,76 +24,52 @@ def limpiar_texto(texto, stop_words_set):
     return cleaned_text
 
 # --- 2. Carga, Entrenamiento y Evaluación 
-
-# Importación de librerías necesarias para el procesamiento de texto,
 # la creación del modelo Naïve Bayes y la evaluación del rendimiento.
-from sklearn.model_selection import train_test_split  # División de datos en entrenamiento y prueba
-from sklearn.feature_extraction.text import CountVectorizer  # Convertir texto en matriz de conteo de palabras
-from sklearn.naive_bayes import MultinomialNB  # Modelo de clasificación basado en Naïve Bayes multinomial
-from sklearn.metrics import accuracy_score, classification_report, recall_score  # Métricas de evaluación
-from sklearn.pipeline import Pipeline  # Facilita la construcción de un flujo de procesamiento
+from sklearn.model_selection import train_test_split 
+from sklearn.feature_extraction.text import CountVectorizer  # Conteo de palabras
+from sklearn.naive_bayes import MultinomialNB  # Este se utiliza para la clasificación de Bayes
+from sklearn.metrics import accuracy_score, classification_report, recall_score  
+from sklearn.pipeline import Pipeline 
 
 def load_train_evaluate(csv_path):
-    global stop_words  # Lista de palabras irrelevantes (stop words) a excluir del procesamiento
+    global stop_words  # Lista de palabras a excluir del procesamiento
 
     print("Cargando datos...")
-    datos = pd.read_csv("spam_assassin.csv")  # Carga el dataset desde un archivo CSV
+    datos = pd.read_csv("spam_assassin.csv") 
 
     # --- Limpieza y preparación de datos ---
     
-    # Eliminación de duplicados en la columna "text"
-    datos = datos.drop_duplicates(subset=["text"]).copy()
-
-    # Conversión de todo el texto a minúsculas para normalización
-    datos["text"] = datos["text"].str.lower()
-
-    # Eliminación de caracteres no alfabéticos y reemplazo por espacios
-    datos["text"] = datos["text"].str.replace(r"[^a-zA-Z\s]", " ", regex=True)
-
-    # Eliminación de palabras con menos de 3 letras y stop words
+    datos = datos.drop_duplicates(subset=["text"]).copy()  # Se eliminan duplicados en la columna "text"
+    datos["text"] = datos["text"].str.lower() # Convertir todo el texto a minúsculas
+    datos["text"] = datos["text"].str.replace(r"[^a-zA-Z\s]", " ", regex=True) #Quitar caract. raros
     datos["text"] = datos["text"].apply(lambda x: " ".join([word for word in x.split() if len(word) > 2 and word not in stop_words]))
-
     # División de los datos en conjuntos de entrenamiento (80%) y prueba (20%)
     entrena_x, prueba_x, entrena_y, prueba_y = train_test_split(
         datos["text"], datos["target"], test_size=0.2, random_state=42
     )
-
-    # --- Construcción del pipeline ---
-    
-    # Se crea un flujo de procesamiento que incluye:
-    # 1. CountVectorizer: Convierte el texto en una matriz de conteo de palabras.
-    # 2. MultinomialNB: Modelo de clasificación basado en Naïve Bayes para datos discretos.
+    # Convierte el texto en una matriz de conteo de palabras.
     pipeline = Pipeline([
         ('vectorizer', CountVectorizer()),
-        ('classifier', MultinomialNB())])
-    
+        ('classifier', MultinomialNB())])    
     print("Entrenando modelo...")
     
     # Entrenamiento del modelo con los datos de entrenamiento
     pipeline.fit(entrena_x, entrena_y)
-
     print("\n--- Evaluación Test ---")
-
-    # Predicción de las etiquetas en el conjunto de prueba
     y_pred = pipeline.predict(prueba_x)
 
-    # Cálculo de la Exactitud (Accuracy)
-    #    Accuracy = (TP + TN) / Total
+    # Cálculo de la Exactitud (P + N) / Total
     accuracy = accuracy_score(prueba_y, y_pred)
     print(f"Exactitud: {accuracy:.4f}")
 
-    # Cálculo de la Recuperación (Recall ponderado)
-    #    Recall = TP / (TP + FN)
+    # Cálculo de la Recuperación P / (P + FN)
     recall_w = recall_score(prueba_y, y_pred, average='weighted')
     print(f"Recuperación (Recall Ponderado): {recall_w:.4f} ({recall_w*100:.2f}%)")
-
     print("----------------------")
     
-    # Reporte detallado de la clasificación con métricas como precisión y recall por clase
+    # Reporte de la clasificación como precisión y recall por clase
     print("\nReporte de Clasificación Detallado:")
     print(classification_report(prueba_y, y_pred))
-
-    # Retorna el modelo entrenado para posibles usos posteriores
     return pipeline
 
 
