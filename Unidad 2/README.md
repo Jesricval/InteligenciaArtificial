@@ -10,3 +10,4 @@ OSUNA RUSSELL ANA ISABEL - RODRIGUEZ VALERIO JESUS RICARDO
 [RED SEMANTICA](https://github.com/Jesricval/InteligenciaArtificial/blob/main/Unidad%202/RED%20SEMANTICA.pdf)
 
 [CLASIFICADOR CORREOS SPAM](https://github.com/Jesricval/InteligenciaArtificial/tree/main/Unidad%202/Clasificador%20Spam%20)
+[PDF CLASIFICADOR](https://github.com/Jesricval/InteligenciaArtificial/blob/main/Unidad%202/Clasificador%20Spam/ClasificadorDeSPAM.pdf)
